@@ -4,12 +4,33 @@
  * construct available in Javascript.
  */
 
+ const max = (x, y) => {
+   if (x > y) {
+     return x
+   } 
+   else {
+     return y
+   }
+  }
+     
 // ...
 
 /**
  * Define a function maxOfThree() that takes three
  * numbers as arguments and returns the largest of them.
  */
+
+const maxOfThree = (x, y, z) => {
+  if (x > y && x > z) {
+    return x
+  }
+  else if (y > x && y > z) {
+    return y
+  }
+  else {
+    return z
+  }
+}
 
 // ...
 
@@ -18,6 +39,10 @@
  * arguments and computes the sum of those two numbers.
  */
 
+function sum (x, y) {
+  return x + y
+}
+
 // ...
 
 /*
@@ -25,12 +50,34 @@
  * all the numbers in an array.
  */
 
+// const sumOfArray = [1, 2, 3];
+  //  sumOfArray (i = 0, sum = 0); i < array.length; sum += array[i++];
+const sumOfArray = (arr) =>{
+  let total = 0 
+  for (let i = 0; i < arr.length;i++) {
+    total += arr[i]
+  }
+  return total 
+}
 // ...
 
 /**
  * Write a function isVowel() that takes a character (i.e. a string of length 1)
  * and returns true if it is a vowel, false otherwise.
  */
+
+const isVowel = (ch) => {if ('aeiou'.indexOf(ch.toLowerCase()) >= 0)
+return 0
+}
+
+// ch = ch.toLowerCase()
+// //Brute force
+// if (ch === 'a' || ch === 'e' ch === 'a' || ch === 'i' ch === 'o' || ch === 'u')
+// //REGEX
+// if (new RegExp(/[aeiou]/gi, "i").test())
+// //strig & indexOf
+// if ('aeiou'.indexOf(ch.toLowerCase()) >= 0)
+
 
 // ...
 
@@ -43,6 +90,27 @@
   * return the string "tothohisos isos fofunon".
   */
 
+ var translate = function(text) {
+  var string = text.toLowerCase();
+  var vowels = ["a", "e", "i", "o", "u", " "];
+  var y = "";
+  for (i = 0; i < string.length; i++) {
+     var current = string.charAt(i); 
+    if (vowels.indexOf(current) != -1) {
+        y = (y + (current));
+    } else {
+        y = (y + (current + "o" + current));
+    }
+  }
+  return y;
+}
+  
+
+
+
+  
+
+
 // ...
 
 /**
@@ -51,6 +119,13 @@
  * reverse("skoob") should return the
  * string "books".
  */
+
+function reverseString(str)  {
+  let splitString = str.split("");
+  let reverseArray = splitString.reverse();
+  let joinArray = reverseArray.join("");
+  return joinArray("")
+}
 
 // ...
 
